@@ -1,17 +1,16 @@
 {
-    "devDependencies": {
-        "eslint": "^8.39.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.27.5",
-        "prettier": "^2.8.8"
-    },
-    "name": "cc-scss-7-1",
+    "name": "cc-styles-7-1",
     "version": "1.0.0",
     "description": "SCSS boilerplate with the 7-1 folder structure",
     "main": "",
     "directories": {
         "test": "styles"
     },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Cristian Coppari",
+    "license": "MIT",
     "dependencies": {
         "ajv": "^6.12.6",
         "ansi-regex": "^5.0.1",
@@ -166,9 +165,10 @@
         "wrappy": "^1.0.2",
         "type-fest": "^0.20.2"
     },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Cristian Coppari",
-    "license": "MIT"
+    "devDependencies": {
+        "eslint": "^8.39.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.27.5",
+        "prettier": "^2.8.8"
+    }
 }
