@@ -5,7 +5,7 @@
         "eslint-plugin-import": "^2.27.5",
         "prettier": "^2.8.8"
     },
-    "name": "scss-boilerplate",
+    "name": "scss-boilerplate-new-syntax",
     "version": "1.0.0",
     "description": "SCSS boilerplate with the 7-1 folder structure",
     "main": "",
