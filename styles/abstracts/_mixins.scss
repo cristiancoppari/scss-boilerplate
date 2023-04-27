@@ -1,0 +1,174 @@
+// --------------------------------------------------
+// Media Query Mixin
+// By default uses min width breakpoints
+// Change to max width if needed
+// --------------------------------------------------
+@use "sass:math";
+@use "abstracts/variables" as v;
+
+@mixin screen($screen-size) {
+    @if $screen-size == "xs" {
+        @media (max-width: (v.$sm - 1px)) {
+            @content;
+        }
+    } @else if $screen-size == "sm" {
+        @media (min-width: (v.$sm)) {
+            @content;
+        }
+    } @else if $screen-size == "md" {
+        @media (min-width: (v.$md)) {
+            @content;
+        }
+    } @else if $screen-size == "lg" {
+        @media (min-width: (v.$lg)) {
+            @content;
+        }
+    } @else if $screen-size == "xl" {
+        @media (min-width: (v.$xl)) {
+            @content;
+        }
+    } @else if $screen-size == "xxl" {
+        @media (min-width: (v.$xxl)) {
+            @content;
+        }
+    } @else {
+        @media (min-width: ($screen-size)) {
+            @content;
+        }
+    }
+}
+
+// --------------------------------------------------
+// Fonts
+// --------------------------------------------------
+@mixin font-size(
+    $size: 16,
+    $weight: 400,
+    $line-height: normal,
+    $letter-spacing: normal
+) {
+    font-size: $size + px;
+    font-size: px2rem($size);
+    font-weight: $weight;
+
+    @if $line-height == normal {
+        line-height: normal;
+    } @else {
+        line-height: math.div($line-height, $size);
+    }
+
+    @if $letter-spacing == normal {
+        letter-spacing: normal;
+    } @else {
+        letter-spacing: #{math.div($letter-spacing, $size)}em;
+    }
+}
+
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: quote($font-name);
+        src: url($path + ".woff2") format("woff2"),
+            url($path + ".woff2") format("woff2");
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+// Flex mixins
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-start($direction: column) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+// Image mixins
+@mixin image-responsive($display: block) {
+    display: $display;
+    max-width: 100%;
+    height: auto;
+}
+
+// Grid mixin
+@mixin main-grid($height: auto, $rows: auto) {
+    display: grid;
+    height: $height;
+    align-items: center;
+
+    @if $rows != auto {
+        grid-template-rows: repeat($rows, 1fr);
+    }
+
+    grid-template-columns: repeat(3, 1fr 1rem) 1fr;
+
+    @include screen(v.$md) {
+        grid-template-columns: repeat(5, 1fr 1rem) 1fr;
+    }
+
+    @include screen(v.$lg) {
+        grid-template-columns: repeat(11, 1fr 1rem) 1fr;
+    }
+}
+
+// Custom Scrollbars
+@mixin custom-scrollbars() {
+    &::-webkit-scrollbar {
+        width: 0.5em;
+        padding-left: 10px;
+    }
+
+    &.--horizontal-scroll {
+        &::-webkit-scrollbar {
+            height: 0.5em;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        outline: 0;
+        border-radius: 5px;
+    }
+}
+
+// Border Radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box; /* stops bg color from leaking outside the border: */
+}
+
+// Text truncate
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Flex toolkit
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-column {
+    @include flex-center;
+    flex-direction: column;
+}

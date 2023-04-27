@@ -1,0 +1,75 @@
+@use "./mixins" as m;
+
+.--richtext {
+    @include font-size(18, 28);
+
+    b,
+    strong {
+        font-weight: 700;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+        font-weight: 700;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+    }
+
+    hr {
+        display: block;
+        margin: 1.5rem 0;
+        border-top: 1px solid $gray;
+        border-bottom: 0;
+
+        & ~ p {
+            margin-top: 2rem;
+        }
+    }
+
+    ul {
+        padding-left: 25px;
+        list-style: disc;
+
+        li {
+            margin-bottom: 24px;
+            padding-left: 16px;
+
+            @include device-md("min") {
+                padding-left: 20px;
+            }
+            @include device-lg("min") {
+                padding-left: 40px;
+            }
+        }
+    }
+
+    @include device-xl {
+        @include font-size(16, 24);
+    }
+
+    @include device-sm {
+        @include font-size(14, 20);
+    }
+}
+
+.--center-text {
+    text-align: center;
+}
+
+.--hidden {
+    display: none;
+}
