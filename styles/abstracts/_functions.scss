@@ -2,6 +2,8 @@
 // Functions
 // --------------------------------------------------
 
+@use "sass:math";
+
 /*
  * px2rem
  * Converts px to rem
@@ -10,7 +12,7 @@
 */
 
 @function px2rem($px) {
-    @return ($px / 16px) * 1rem;
+    @return math.div($px, 16) * 1rem;
 }
 
 /*
@@ -21,5 +23,5 @@
 */
 
 @function px2em($px) {
-    @return ($px / 16px) * 1em;
+    @return math.div($px, 16) * 1em;
 }

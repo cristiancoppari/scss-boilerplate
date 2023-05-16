@@ -1,7 +1,9 @@
+@use "./functions" as f;
+@use "./variables" as v;
 @use "./mixins" as m;
 
 .--richtext {
-    @include font-size(18, 28);
+    @include m.font-size(14, 20);
 
     b,
     strong {
@@ -32,7 +34,7 @@
     hr {
         display: block;
         margin: 1.5rem 0;
-        border-top: 1px solid $gray;
+        border-top: 1px solid v.$gray;
         border-bottom: 0;
 
         & ~ p {
@@ -48,25 +50,25 @@
             margin-bottom: 24px;
             padding-left: 16px;
 
-            @include device-md("min") {
+            @include m.screen("md") {
                 padding-left: 20px;
             }
-            @include device-lg("min") {
+            @include m.screen("lg") {
                 padding-left: 40px;
             }
         }
     }
 
-    @include device-xl {
-        @include font-size(16, 24);
+    @include m.screen("md") {
+        @include m.font-size(16, 24);
     }
 
-    @include device-sm {
-        @include font-size(14, 20);
+    @include m.screen("lg") {
+        @include m.font-size(18, 28);
     }
 }
 
-.--center-text {
+.--text-center {
     text-align: center;
 }
 

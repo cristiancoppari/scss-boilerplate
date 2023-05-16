@@ -1,0 +1,5 @@
+// Choose where because it has 0 specificity
+// So it can be easily overridden
+:where(h1, h2, h3, h4, h5, h6) {
+    margin: 0;
+}

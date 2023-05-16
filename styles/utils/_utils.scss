@@ -5,8 +5,9 @@
  * https://tailwindcss.com/docs/container
  */
 
-@use "abstracts/variables" as v;
-@use "abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
 
 .container {
     width: 100%;
@@ -43,21 +44,21 @@
     position: relative;
 
     width: 100%;
-    max-width: $max_width_wrapper;
+    max-width: v.$max_width_wrapper;
 
     margin-left: auto;
     margin-right: auto;
 
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: f.px2rem(24);
+    padding-right: f.px2rem(24);
 
-    @include device-lg {
-        padding-left: 32px;
-        padding-right: 32px;
+    @include m.screen("md") {
+        padding-left: f.px2rem(32);
+        padding-right: f.px2rem(32);
     }
 
-    @include device-md {
-        padding-left: 24px;
-        padding-right: 24px;
+    @include m.screen("lg") {
+        padding-left: f.px2rem(80);
+        padding-right: f.px2rem(80);
     }
 }
