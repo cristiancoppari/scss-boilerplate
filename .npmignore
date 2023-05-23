@@ -2,3 +2,5 @@ node_modules
 .log
 .md
 .gitignore
+./styles/index.css
+./styles/index.css.map
