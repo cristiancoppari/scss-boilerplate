@@ -23,11 +23,17 @@ This is a library that uses ESLint for linting with Airbnb base config, follows 
 -   [Prettier](https://prettier.io/docs/en/install.html) for Visual Studio Code.
 -   [Stylelint](https://stylelint.io/) for Visual Studio Code.
 
+### Recommended
+
+This extensions are not required, but if you have them, they will bring a better development experience:
+
+-   [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+-   [Better comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+
 ### Installation
 
 1. Open you terminal in the `root` of the project and run this command:
    `npm install @egodesign/styleguide`
-2. France.
-3. Copy the content of `node_modules/@egodesign/styleguide` into your project.
+2. Copy the content of `node_modules/@egodesign/styleguide` into your project.
 
 ###### Made with ❤️ by EGO Design ⚫️.
