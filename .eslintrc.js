@@ -34,5 +34,7 @@ module.exports = {
                 "newlines-between": "always",
             },
         ],
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
     },
 };
