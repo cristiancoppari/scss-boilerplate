@@ -10,9 +10,6 @@
 @use "../abstracts/functions" as f;
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-
     @include m.screen("sm") {
         max-width: v.$sm;
     }
@@ -32,6 +29,9 @@
     @include m.screen("xxl") {
         max-width: v.$xxl;
     }
+
+    width: 100%;
+    margin: 0 auto;
 }
 
 /**
@@ -40,7 +40,9 @@
  */
 .wrapper {
     position: relative;
+
     display: block;
+
     width: 100%;
     max-width: v.$max_width_wrapper;
     padding-right: f.px2rem(24);
